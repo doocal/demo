@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>demo1</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+</head>
+<body>
+<form id="edit_form" role="form">
+    <input readonly placeholder="placeholder" size="50" type="text" class="form-control" v-on:click="selectFn()" v-model="pI_ArtNo">
+    <input readonly placeholder="placeholder" size="50" type="text" class="form-control" v-model="pI_Name" v-on:click="selectFn()" data-rule="required;">
+</form>
+<script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+<script src="https://vuejs.org/js/vue.js"></script>
+<script src="https://aui.github.io/artDialog/dist/dialog-plus.js"></script>
+<script>
+    var cur = {}
+
+    cur.vm = new Vue({
+        el: '#edit_form',
+        data: {
+            pI_ArtNo: "",
+            pI_Name: ""
+        },
+        created: function () {
+
+        },
+        mounted: function () {
+
+        },
+        methods: {
+            selectFn: function () {
+
+                var d = dialog({
+                    title: 'callback',
+                    content: 'test',
+                    onclose: function () {
+                        cur.vm.pI_ArtNo = 'pI_ArtNo' + Math.random();
+                        cur.vm.pI_Name = 'pI_Name' + Math.random();
+                    },
+                });
+                d.showModal();
+                d.addEventListener('close', function () {
+                    d.remove();
+                });
+
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
