@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2196f3">
+    <title>demo</title>
+    <link rel="stylesheet" href="http://framework7.io/dist/css/framework7.min.css">
+    <link rel="stylesheet" href="http://framework7.io/kitchen-sink/css/app.css">
+</head>
+
+<body>
+<!-- App root element -->
+<div id="app">
+    <!-- Statusbar overlay -->
+    <div class="statusbar"></div>
+
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+        <!-- Initial Page, "data-name" contains page name -->
+        <div class="page no-navbar">
+
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <!-- Toolbar links -->
+                    <a href="#" class="link">Link 1</a>
+                    <a href="#" class="link">Link 2</a>
+                </div>
+            </div>
+
+            <!-- Scrollable page content -->
+            <div class="page-content">
+
+                <div data-pagination='{"el": ".swiper-pagination"}' data-loop="true" data-space-between="50" class="swiper-container swiper-init demo-swiper-multiple">
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">111</div>
+                        <div class="swiper-slide">222</div>
+                        <div class="swiper-slide">333</div>
+                        <div class="swiper-slide">444</div>
+                        <div class="swiper-slide">555</div>
+                    </div>
+                </div>
+
+                <div class="block-title desktop-block-title">
+                    Simple List
+                </div>
+                <div class="list simple-list">
+                    <ul>
+                        <li><a href="/list/">Item 1</a></li>
+                        <li><a href="/list/">Item 3</a></li>
+                        <li><a href="/list/">Item 2</a></li>
+                    </ul>
+                </div>
+                <div class="block-title desktop-block-title">
+                    Simple List
+                </div>
+                <div class="list simple-list">
+                    <ul>
+                        <li><a href="/list/">Item 1</a></li>
+                        <li><a href="/list/">Item 2</a></li>
+                        <li><a href="/list/">Item 3</a></li>
+                    </ul>
+                </div>
+                <div class="block-title desktop-block-title">
+                    Simple List
+                </div>
+                <div class="list simple-list">
+                    <ul>
+                        <li><a href="/list/">Item 1</a></li>
+                        <li><a href="/list/">Item 2</a></li>
+                        <li><a href="/list/">Item 3</a></li>
+                    </ul>
+                </div>
+
+                <div class="block-title desktop-block-title">
+                    Simple List
+                </div>
+                <div class="list simple-list">
+                    <ul>
+                        <li><a href="/list/">Item 1</a></li>
+                        <li><a href="/list/">Item 2</a></li>
+                        <li><a href="/list/">Item 3</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="http://framework7.io/dist/js/framework7.min.js"></script>
+<script>
+    var app = new Framework7({
+        root: '#app',
+        name: 'My App',
+        id: 'app',
+        theme: 'ios',
+        routes: [
+            {
+                name: 'list',
+                path: '/list/',
+                url: './list.html',
+            }]
+    });
+    var mainView = app.views.create('.view-main');
+</script>
+</body>
+</html>
