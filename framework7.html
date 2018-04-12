@@ -7,8 +7,42 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="theme-color" content="#2196f3">
     <title>demo</title>
-    <link rel="stylesheet" href="http://framework7.io/dist/css/framework7.min.css">
-    <link rel="stylesheet" href="http://framework7.io/kitchen-sink/css/app.css">
+    <link rel="stylesheet" href="https://framework7.io/dist/css/framework7.min.css">
+    <style>
+        .demo-swiper .swiper-slide {
+            font-size: 25px;
+            font-weight: 300;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            color: #000;
+        }
+
+        .demo-swiper .swiper-slide {
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            background: #fff;
+        }
+
+        .demo-swiper {
+            margin: 0px 0 35px;
+            font-size: 18px;
+            height: 120px;
+        }
+
+        .demo-swiper.demo-swiper-auto .swiper-slide {
+            width: 85%;
+        }
+
+        .demo-swiper.demo-swiper-auto .swiper-slide:nth-child(2n) {
+            width: 70%;
+        }
+
+        .demo-swiper.demo-swiper-auto .swiper-slide:nth-child(3n) {
+            width: 30%;
+        }
+    </style>
 </head>
 
 <body>
@@ -92,7 +126,7 @@
 
     </div>
 </div>
-<script src="http://framework7.io/dist/js/framework7.min.js"></script>
+<script src="https://framework7.io/dist/js/framework7.min.js"></script>
 <script>
     var app = new Framework7({
         root: '#app',
