@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <link rel="stylesheet" href="../css/webui.min.css">
+    <script src="../js/common.min.js"></script>
+    <script src="../js/webui.min.js"></script>
+</head>
+<body>
+<script>
+
+    var grid1, grid2;
+
+    $(document).ready(function () {
+
+        grid1 = BT.create({
+            type: 'grid',
+            title: 'grid 表头合并',
+            renderTo: 'body',
+            height: 400,
+            width: 800,
+            icon: 'volume-up',
+            idField: 'id',
+            textField: 'name',
+            paging: true,
+            pageSize: 7,
+            emptyText: '暂无信息……',
+            columns: [
+                {
+                    text: '数据一',
+                    field: 'year',
+                    width: 80,
+                    headerAlign: 'left',
+                    align: 'left'
+                },
+                {
+                    text: '安徽省',
+                    field: 'anhui',
+                    align: 'center',
+                    columns: [{
+                        text: '合肥市',
+                        field: 'hefei',
+                        align: 'center',
+                        columns: [
+                            {
+                                text: '数据一',
+                                field: 'hefei_data1',
+                                width: 100
+                            },
+                            {
+                                text: '数据二',
+                                field: 'hefei_data2',
+                                width: 100
+                            }
+                        ]
+                    }]
+                },
+                {
+                    text: '江苏省',
+                    field: '',
+                    align: 'center',
+                    columns: [{
+                        text: '南京市',
+                        field: 'nanjing',
+                        align: 'center',
+                        columns: [
+                            {
+                                text: '数据一',
+                                field: 'nanjing_data1',
+                                width: 100
+                            },
+                            {
+                                text: '数据二',
+                                field: 'nanjing_data2',
+                                width: 100
+                            }
+                        ]
+                    }, {
+                        text: '无锡市',
+                        field: 'wuxi',
+                        align: 'center',
+                        columns: [
+                            {
+                                text: '数据一',
+                                field: 'wuxi_data1',
+                                width: 100
+                            }, {
+                                text: '数据二',
+                                field: 'wuxi_data2',
+                                width: 100
+                            }
+                        ]
+                    }]
+                },
+                {
+                    text: '记录时间',
+                    field: 'logTime',
+                    align: 'left',
+                    // flex: 1,
+                    width: 200,
+                    fieldType: 'date',
+                    fieldFormat: 'yyyy-MM-dd'
+                }
+            ],
+            data: [
+                {
+                    'year': 2000,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 3564,
+                    'hefei_data2': 8909,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 5842,
+                    'nanjing_data2': 6093,
+                    'wuxi': '',
+                    'wuxi_data1': 8630,
+                    'wuxi_data2': 8700,
+                    'logTime': '2000-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2001,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 5941,
+                    'hefei_data2': 7142,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 1441,
+                    'nanjing_data2': 9844,
+                    'wuxi': '',
+                    'wuxi_data1': 6491,
+                    'wuxi_data2': 6691,
+                    'logTime': '2001-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2002,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 3622,
+                    'hefei_data2': 8629,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 1283,
+                    'nanjing_data2': 5906,
+                    'wuxi': '',
+                    'wuxi_data1': 8993,
+                    'wuxi_data2': 8324,
+                    'logTime': '2002-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2003,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 2439,
+                    'hefei_data2': 8125,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 4830,
+                    'nanjing_data2': 4353,
+                    'wuxi': '',
+                    'wuxi_data1': 5755,
+                    'wuxi_data2': 4180,
+                    'logTime': '2003-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2004,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 9707,
+                    'hefei_data2': 7881,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 5044,
+                    'nanjing_data2': 4386,
+                    'wuxi': '',
+                    'wuxi_data1': 9953,
+                    'wuxi_data2': 1541,
+                    'logTime': '2004-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2005,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 1600,
+                    'hefei_data2': 7988,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 9806,
+                    'nanjing_data2': 1099,
+                    'wuxi': '',
+                    'wuxi_data1': 7713,
+                    'wuxi_data2': 6585,
+                    'logTime': '2005-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2006,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 6450,
+                    'hefei_data2': 1776,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 2527,
+                    'nanjing_data2': 9879,
+                    'wuxi': '',
+                    'wuxi_data1': 8301,
+                    'wuxi_data2': 1543,
+                    'logTime': '2006-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2007,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 5071,
+                    'hefei_data2': 7303,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 8338,
+                    'nanjing_data2': 1245,
+                    'wuxi': '',
+                    'wuxi_data1': 7503,
+                    'wuxi_data2': 8236,
+                    'logTime': '2007-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2008,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 9459,
+                    'hefei_data2': 7679,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 1624,
+                    'nanjing_data2': 7462,
+                    'wuxi': '',
+                    'wuxi_data1': 1297,
+                    'wuxi_data2': 1771,
+                    'logTime': '2008-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2009,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 4227,
+                    'hefei_data2': 4509,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 4830,
+                    'nanjing_data2': 7799,
+                    'wuxi': '',
+                    'wuxi_data1': 4302,
+                    'wuxi_data2': 3661,
+                    'logTime': '2009-09-30T16:00:00.000Z'
+                },
+                {
+                    'year': 2000,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 3564,
+                    'hefei_data2': 8909,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 5842,
+                    'nanjing_data2': 6093,
+                    'wuxi': '',
+                    'wuxi_data1': 8630,
+                    'wuxi_data2': 8700,
+                    'logTime': '2000-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2001,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 5941,
+                    'hefei_data2': 7142,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 1441,
+                    'nanjing_data2': 9844,
+                    'wuxi': '',
+                    'wuxi_data1': 6491,
+                    'wuxi_data2': 6691,
+                    'logTime': '2001-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2002,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 3622,
+                    'hefei_data2': 8629,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 1283,
+                    'nanjing_data2': 5906,
+                    'wuxi': '',
+                    'wuxi_data1': 8993,
+                    'wuxi_data2': 8324,
+                    'logTime': '2002-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2003,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 2439,
+                    'hefei_data2': 8125,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 4830,
+                    'nanjing_data2': 4353,
+                    'wuxi': '',
+                    'wuxi_data1': 5755,
+                    'wuxi_data2': 4180,
+                    'logTime': '2003-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2004,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 9707,
+                    'hefei_data2': 7881,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 5044,
+                    'nanjing_data2': 4386,
+                    'wuxi': '',
+                    'wuxi_data1': 9953,
+                    'wuxi_data2': 1541,
+                    'logTime': '2004-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2005,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 1600,
+                    'hefei_data2': 7988,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 9806,
+                    'nanjing_data2': 1099,
+                    'wuxi': '',
+                    'wuxi_data1': 7713,
+                    'wuxi_data2': 6585,
+                    'logTime': '2005-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2006,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 6450,
+                    'hefei_data2': 1776,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 2527,
+                    'nanjing_data2': 9879,
+                    'wuxi': '',
+                    'wuxi_data1': 8301,
+                    'wuxi_data2': 1543,
+                    'logTime': '2006-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2007,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 5071,
+                    'hefei_data2': 7303,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 8338,
+                    'nanjing_data2': 1245,
+                    'wuxi': '',
+                    'wuxi_data1': 7503,
+                    'wuxi_data2': 8236,
+                    'logTime': '2007-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2008,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 9459,
+                    'hefei_data2': 7679,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 1624,
+                    'nanjing_data2': 7462,
+                    'wuxi': '',
+                    'wuxi_data1': 1297,
+                    'wuxi_data2': 1771,
+                    'logTime': '2008-09-30T16:00:00.000Z'
+                }, {
+                    'year': 2009,
+                    'anhui': '',
+                    'hefei': '',
+                    'hefei_data1': 4227,
+                    'hefei_data2': 4509,
+                    'henan': '',
+                    'nanjing': '',
+                    'nanjing_data1': 4830,
+                    'nanjing_data2': 7799,
+                    'wuxi': '',
+                    'wuxi_data1': 4302,
+                    'wuxi_data2': 3661,
+                    'logTime': '2009-09-30T16:00:00.000Z'
+                }
+            ]
+        }).on('collapse expand', function (e) {
+            console.info('collapse expand:', e.type);
+            return false;
+        });
+
+    });
+</script>
+</body>
+</html>

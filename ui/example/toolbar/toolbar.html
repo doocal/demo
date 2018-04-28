@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <link rel="stylesheet" href="../css/webui.min.css">
+    <script src="../js/common.min.js"></script>
+    <script src="../js/webui.min.js"></script>
+</head>
+<body>
+<script>
+    var toolBar1, toolBar2, toolBar3, toolBar4;
+    $(document).ready(function () {
+
+        toolBar1 = BT.create({
+            type: 'toolbar',
+            title: '',
+            renderTo: 'body',
+            align: 'left',
+            items: [
+                {
+                    type: 'button',
+                    text: 'button1',
+                    handler: function () {
+                        console.info('Toolbar1 handler button1');
+                    }
+                }, '|', {
+                    type: 'button',
+                    text: 'button2',
+                    handler: function () {
+                        console.info('Toolbar1 handler button2');
+                    }
+                }, '|', {
+                    type: 'button',
+                    text: 'button3',
+                    handler: function () {
+                        console.info('Toolbar1 handler button3');
+                    }
+                }]
+        });
+
+        toolBar2 = BT.create({
+            type: 'toolbar',
+            title: '',
+            renderTo: 'body',
+            align: 'right',
+            items: [{
+                type: 'button',
+                text: 'button1',
+                handler: function () {
+                    console.info('Toolbar2 handler button1');
+                }
+            }, '|', {
+                type: 'button',
+                text: 'button2',
+                handler: function () {
+                    console.info('Toolbar2 handler button2');
+                }
+            }]
+        });
+
+        toolBar3 = BT.create({
+            type: 'toolbar',
+            title: '',
+            renderTo: 'body',
+            align: 'center',
+            items: [{
+                type: 'button',
+                text: 'button1',
+                handler: function () {
+                    console.info('Toolbar3 handler button1');
+                }
+            }, '|', {
+                type: 'button',
+                text: 'button2',
+                handler: function () {
+                    console.info('Toolbar3 handler button2');
+                }
+            }]
+        });
+
+        toolBar4 = BT.create({
+            type: 'toolbar',
+            title: '',
+            renderTo: 'body',
+            items: [{
+                type: 'button',
+                text: 'button1',
+                handler: function () {
+                    console.info('Toolbar4 handler button1');
+                }
+            }, '->', {
+                type: 'button',
+                text: 'button2',
+                handler: function () {
+                    console.info('Toolbar4 handler button2');
+                }
+            }]
+        });
+
+    });
+
+</script>
+</body>
+</html>

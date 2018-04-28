@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <link rel="stylesheet" href="../css/webui.min.css">
+    <script src="../js/common.min.js"></script>
+    <script src="../js/webui.min.js"></script>
+</head>
+<body>
+<script>
+
+    var tools1, tools2, tools3, tools4;
+
+    $(document).ready(function () {
+
+        tools1 = BT.create({
+            type: 'tools',
+            scale: 'lg',
+            text: '点击打开新窗体',
+            renderTo: 'body',
+            disabled: true,
+            icon: 'gear',
+            iconAlign: 'top',
+            handler: function (e) {
+                console.info('handler:', e);
+            }
+        }).on('beforeclick', function (e) {
+            console.info('beforeclick:', e);
+        }).on('click', function (e) {
+            console.info('click:', e);
+        });
+
+    });
+
+</script>
+</body>
+</html>

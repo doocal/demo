@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <link rel="stylesheet" href="../css/webui.min.css">
+    <script src="../js/common.min.js"></script>
+    <script src="../js/webui.min.js"></script>
+</head>
+<body>
+<script>
+
+    var button1, button2, button3, button4;
+    var button11, button12, button13, button14;
+
+    $(document).ready(function () {
+
+        button1 = BT.create({
+            type: 'button',
+            scale: 'lg',
+            text: '点击打开新窗体',
+            renderTo: 'body',
+            disabled: true,
+            icon: 'gear',
+            handler: function (e) {
+                console.info('handler:', e);
+            }
+        }).on('beforeclick', function (e) {
+            console.info('beforeclick:', e);
+        }).on('click', function (e) {
+            console.info('click:', e);
+        });
+
+        button2 = BT.create({
+            type: 'button',
+            theme: 'primary',
+            text: '点击打开新窗体',
+            icon: 'wrench1',
+            renderTo: 'body',
+            handler: function (e) {
+                console.info('handler2:', e);
+            }
+        });
+
+        button3 = BT.create({
+            type: 'button',
+            scale: 'sm',
+            theme: 'success',
+            text: '点击打开新窗体',
+            icon: 'print',
+            renderTo: 'body',
+            handler: function (e) {
+                console.info('handler3:', e);
+            }
+        });
+
+        button4 = BT.create({
+            type: 'button',
+            scale: 'xs',
+            theme: 'danger',
+            text: '点击打开新窗体',
+            icon: 'gear',
+            renderTo: 'body',
+            handler: function (e) {
+                console.info('handler4:', e);
+            }
+        });
+
+        button11 = BT.create({
+            type: 'button',
+            scale: 'lg',
+            text: '点击打开新窗体',
+            renderTo: 'body',
+            disabled: true,
+            icon: 'gear',
+            iconAlign: 'top',
+            handler: function (e) {
+                console.info('handler:', e);
+            }
+        }).on('beforeclick', function (e) {
+            console.info('beforeclick:', e);
+        }).on('click', function (e) {
+            console.info('click:', e);
+        });
+
+        button12 = BT.create({
+            type: 'button',
+            theme: 'primary',
+            text: '点击打开新窗体',
+            icon: 'wrench1',
+            iconAlign: 'bottom',
+            renderTo: 'body',
+            handler: function (e) {
+                console.info('handler2:', e);
+            }
+        });
+
+        button13 = BT.create({
+            type: 'button',
+            scale: 'sm',
+            theme: 'success',
+            text: '点击打开新窗体',
+            icon: 'print',
+            iconAlign: 'left',
+            renderTo: 'body',
+            handler: function (e) {
+                console.info('handler3:', e);
+            }
+        });
+
+        button14 = BT.create({
+            type: 'button',
+            scale: 'xs',
+            theme: 'danger',
+            text: '点击打开新窗体',
+            icon: 'gear',
+            iconAlign: 'right',
+            renderTo: 'body',
+            handler: function (e) {
+                console.info('handler4:', e);
+            }
+        });
+
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <link rel="stylesheet" href="../css/webui.min.css">
+    <script src="../js/common.min.js"></script>
+    <script src="../js/webui.min.js"></script>
+</head>
+<body>
+<script>
+
+    var grid1, grid2;
+
+    $(document).ready(function () {
+
+        grid1 = BT.create({
+            type: 'grid',
+            title: 'grid 列锁定',
+            renderTo: 'body',
+            height: 300,
+            width: 500,
+            icon: "volume-up",
+            idField: 'id',
+            textField: 'name',
+            emptyText: '暂无信息……',
+            columnLocking: true,
+            columns: [
+                {
+                    columnType: 'index',
+                    width: 36
+                },
+                {
+                    text: '姓名',
+                    field: 'name',
+                    width: 80,
+                    locked: true
+                }, {
+                    text: '性别',
+                    field: 'gender',
+                    width: 80
+                }, {
+                    text: '入学年份',
+                    field: 'entranceYear',
+                    width: 80
+                }, {
+                    text: '是否在校',
+                    field: 'atSchool',
+                    width: 80,
+                    columnType: 'checkboxfield'
+                }, {
+                    width: 260,
+                    text: '所学专业',
+                    field: 'major',
+                    // flex: 1,
+                    headerAlign: 'left',
+                    align: 'left',
+                    renderer: function (value, obj) {
+                        return '<a href="javascript:void(0)">' + value + '</a>';
+                    }
+                }
+            ],
+            data: [
+                {
+                    "id": 1,
+                    "name": "张萍萍",
+                    "gender": "女",
+                    "entranceYear": "2000",
+                    "atSchool": true,
+                    "major": "材料科学与工程系",
+                }, {
+                    "id": 2,
+                    "name": "陈飞",
+                    "gender": "男",
+                    "entranceYear": "2000",
+                    "atSchool": true,
+                    "major": "化学系",
+                }, {
+                    "id": 3,
+                    "name": "董婷婷",
+                    "gender": "女",
+                    "entranceYear": "2000",
+                    "atSchool": true,
+                    "major": "自动化系",
+                }, {
+                    "id": 4,
+                    "name": "康颖颖",
+                    "gender": "女",
+                    "entranceYear": "2000",
+                    "atSchool": true,
+                    "major": "化学系",
+                }, {
+                    "id": 5,
+                    "name": "刘国",
+                    "gender": "男",
+                    "entranceYear": "2000",
+                    "atSchool": true,
+                    "major": "数学系",
+                }, {
+                    "id": 6,
+                    "name": "彭博",
+                    "gender": "男",
+                    "entranceYear": "2000",
+                    "atSchool": true,
+                    "major": "数学系",
+                }, {
+                    "id": 7,
+                    "name": "黄婷婷",
+                    "gender": "女",
+                    "entranceYear": "2000",
+                    "atSchool": true,
+                    "major": "数学系",
+                }, {
+                    "id": 8,
+                    "name": "唐超",
+                    "gender": "男",
+                    "entranceYear": "2000",
+                    "atSchool": true,
+                    "major": "物理系",
+                }, {
+                    "id": 9,
+                    "name": "徐鹏",
+                    "gender": "男",
+                    "entranceYear": "2000",
+                    "atSchool": true,
+                    "major": "物理系",
+                }, {
+                    "id": 10,
+                    "name": "董国",
+                    "gender": "男",
+                    "entranceYear": "2000",
+                    "atSchool": true,
+                    "major": "材料科学与工程系",
+                }
+            ]
+        }).on('collapse expand', function (e) {
+            console.info('collapse expand:', e.type);
+            return false;
+        }).on('aabbcc', function (e, c, d) {
+            console.info('aabbcc:', e.type, c, d);
+            return true;
+        }).on('render', function (e) {
+            console.info('render');
+        });
+
+    })
+
+</script>
+</body>
+</html>

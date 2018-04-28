@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <link rel="stylesheet" href="../css/webui.min.css">
+    <script src="../js/require.js"></script>
+</head>
+<body>
+<script>
+    requirejs.config({
+        baseUrl: './',
+        paths: {
+            'jquery': '../js/jquery',
+            'webui': '../js/webui.min',
+        },
+        shim: {
+            jquery: {
+                exports: 'jquery'
+            },
+            webui: {
+                deps: ['jquery']
+            }
+        }
+    });
+
+    var panel1;
+
+    requirejs(['jquery', 'webui'], function ($, $$) {
+
+        $(document).ready(function () {
+
+            panel1 = BT.create({
+                type: 'panel',
+                title: '面板标题',
+                renderTo: 'body',
+                //width: 550,
+                // theme: 'danger',
+                height: 300,
+//            bodyPadding: 10,
+                //style: 'margin:10px',
+                collapsible: true,
+                icon: 'volume-up',
+                tfoot: true,
+//            isCollapsed: true,
+//             disabled: true,
+                tools: [
+                    {
+                        text: '按钮1',
+                        icon: 'windows'
+                    }, {
+                        text: '按钮2',
+                        icon: 'upload'
+                    }, {
+                        text: '按钮3',
+                        icon: 'user-add'
+                    }, {
+                        text: '按钮4',
+                        icon: 'sitemap'
+                    }, {
+                        text: '按钮5',
+                        icon: 'search-plus'
+                    }, {
+                        text: '按钮6',
+                        icon: 'search',
+                        handler: function () {
+                            console.info('handler');
+                        }
+                    }, {
+                        text: '按钮7',
+                        icon: 'power-off',
+                        handler: function () {
+                            console.info('handler');
+                        }
+                    }, {
+                        text: '按钮8',
+                        icon: 'save1',
+                        handler: function () {
+                            console.info('handler');
+                        }
+                    }, {
+                        text: '按钮9',
+                        icon: 'print',
+                        handler: function () {
+                            console.info('handler');
+                        }
+                    }, {
+                        text: '按钮10',
+                        icon: 'globe',
+                        handler: function () {
+                            console.info('handler');
+                        }
+                    }
+                ],
+                toolbar: [
+                    {
+                        align: 'left',
+                        type: 'toolbar',
+                        position: 'top',
+                        items: [{
+                            type: 'button',
+                            text: '点击打开新窗体',
+                            handler: function () {
+                                console.info('../index.html');
+                            }
+                        }, {
+                            type: 'button',
+                            text: '获取工具栏中的按钮数',
+                            handler: function () {
+                                console.info('工具栏中的按钮数');
+                            }
+                        }]
+                    },
+                    {
+                        align: 'left',
+                        type: 'toolbar',
+                        position: 'bottom',
+                        items: [{
+                            type: 'button',
+                            text: '点击打开新窗体',
+                            handler: function () {
+                                console.info('../index.html');
+                            }
+                        }, {
+                            type: 'button',
+                            text: '获取工具栏中的按钮数',
+                            handler: function () {
+                                console.info('工具栏中的按钮数');
+                            }
+                        }]
+                    }
+                ],
+                footer: {
+                    html: '哈哈',
+                    titleAlign: '',
+                    items: [{
+                        type: 'button',
+                        text: '确 定',
+                        handler: function () {
+                            console.info('../index.html');
+                        }
+                    }, {
+                        type: 'button',
+                        text: '取 消',
+                        handler: function () {
+                            console.info('工具栏中的按钮数');
+                        }
+                    }]
+                }
+            }).on('collapse expand', function (e) {
+                console.info('collapse expand:', e.type);
+                return false;
+            });
+
+        });
+
+    });
+
+</script>
+</body>
+</html>

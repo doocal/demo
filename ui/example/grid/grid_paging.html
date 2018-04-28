@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <link rel="stylesheet" href="../css/webui.min.css">
+    <script src="../js/common.min.js"></script>
+    <script src="../js/webui.min.js"></script>
+</head>
+<body>
+<script>
+
+    var grid1, grid2;
+
+    $(document).ready(function () {
+
+        grid1 = BT.create({
+            type: 'grid',
+            id: 'grid1',
+            thead: true,
+            title: 'grid 分页',
+            renderTo: 'body',
+            height: 315,
+            width: 800,
+            //icon: 'volume-up',
+            idField: 'id',
+            textField: 'year',
+            columnLines: true,
+            paging: {
+                enable: true,
+                pageSize: 8,
+                pageInfo: true
+            },
+            columns: [
+                {
+                    text: '数据一',
+                    field: 'year',
+                    width: 80,
+                    headerAlign: 'left',
+                    align: 'left'
+                },
+                {
+                    text: '数据二',
+                    field: 'data1',
+                    align: 'center'
+                },
+                {
+                    text: '数据三',
+                    field: 'data2',
+                    align: 'center'
+                },
+                {
+                    text: '数据四',
+                    field: 'data3',
+                    align: 'center'
+                },
+                {
+                    text: '数据五',
+                    field: 'data4',
+                    align: 'center'
+                },
+                {
+                    text: '日期',
+                    field: 'logTime',
+                    align: 'left',
+                    flex: 1,
+                    width: 200,
+                    fieldType: 'date',
+                    fieldFormat: 'yyyy-MM-dd'
+                }
+            ],
+            data: function () {
+                var arr = [];
+                for (var i = 0, l = 50; i < l; i++) {
+                    arr.push({
+                        'id': i,
+                        'year': BT.Util.randomNum(1000, 2000),
+                        'data1': BT.Util.randomNum(1000, 3000),
+                        'data2': BT.Util.randomNum(1000, 8000),
+                        'data3': BT.Util.randomNum(1000, 5000),
+                        'data4': BT.Util.randomNum(1000, 6000),
+                        'logTime': '2000-09-30T16:00:00.000Z'
+                    });
+                }
+                return arr;
+            }()
+        }).on('beforeclick', function (e) {
+            console.info('grid1 beforeclick:', e);
+        }).on('collapse expand', function (e) {
+            console.info('grid1 collapse expand:', e);
+        });
+
+    });
+
+</script>
+</body>
+</html>

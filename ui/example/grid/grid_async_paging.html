@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <link rel="stylesheet" href="../css/webui.min.css">
+    <script src="../js/common.min.js"></script>
+    <script src="../js/webui.min.js"></script>
+</head>
+<body>
+<script>
+
+    var grid1, grid2;
+
+    $(document).ready(function () {
+
+        grid1 = BT.create({
+            // grid1 = new TT.Grid({
+            type: 'grid',
+            id: 'grid1',
+            thead: true,
+            title: 'grid 分页',
+            renderTo: 'body',
+            height: 315,
+            width: 800,
+            //icon: 'volume-up',
+            idField: 'id',
+            textField: 'year',
+            columnLines: true,
+            paging: {
+                enable: true,
+                pageSize: 4,
+                pageInfo: true
+            },
+            async: {
+                enable: true,
+                data: {
+                    a: 1,
+                    b: 2,
+                    c: 3
+                },
+                url: 'http://localhost:8090/db'
+            },
+            columns: [
+                {
+                    text: '序号',
+                    columnType: 'index',
+                    width: 50
+                },
+                {
+                    text: '数据二',
+                    field: 'data1',
+                    align: 'center'
+                },
+                {
+                    text: '数据三',
+                    field: 'data2',
+                    align: 'center'
+                },
+                {
+                    text: '数据四',
+                    field: 'data3',
+                    align: 'center'
+                },
+                {
+                    text: '数据五',
+                    field: 'data4',
+                    align: 'center'
+                },
+                {
+                    text: '日期',
+                    field: 'logTime',
+                    align: 'left',
+                    flex: 1,
+                    width: 200,
+                    fieldType: 'date',
+                    fieldFormat: 'yyyy-MM-dd'
+                }
+            ]
+        }).on('beforeclick', function (e) {
+            console.info('grid1 beforeclick:', e);
+        }).on('collapse expand', function (e) {
+            console.info('grid1 collapse expand:', e);
+        });
+
+    });
+
+</script>
+</body>
+</html>
