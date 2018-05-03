@@ -12,6 +12,7 @@
     var grid1, grid2;
     $(document).ready(function () {
 
+		var start = new Date().getTime();//起始时间
         grid1 = BT.create({
             type: 'grid',
             title: '面板标题',
@@ -79,6 +80,9 @@
             console.info('collapse expand:', e.type);
             return false;
         });
+		
+		var end = new Date().getTime();//接受时间
+		console.info(end - start)+"ms";
 
     });
 
