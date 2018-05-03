@@ -60,65 +60,21 @@
                     fieldFormat: 'yyyy-MM-dd'
                 }
             ],
-            data: [
-                {
-                    'year': 2000,
-                    'data1': 3564,
-                    'data2': 8909,
-                    'data3': 5842,
-                    'data4': 6093,
-                    'logTime': '2000-09-30T16:00:00.000Z'
-                }, {
-                    'year': 2001,
-                    'data1': 5941,
-                    'data2': 7142,
-                    'data3': 1441,
-                    'data4': 9844,
-                    'logTime': '2001-09-30T16:00:00.000Z'
-                }, {
-                    'year': 2002,
-                    'data1': 3622,
-                    'data2': 8629,
-                    'data3': 1283,
-                    'data4': 5906,
-                    'logTime': '2002-09-30T16:00:00.000Z'
-                }, {
-                    'year': 2003,
-                    'data1': 2439,
-                    'data2': 8125,
-                    'data3': 4830,
-                    'data4': 4353,
-                    'logTime': '2003-09-30T16:00:00.000Z'
-                }, {
-                    'year': 2004,
-                    'data1': 9707,
-                    'data2': 7881,
-                    'data3': 5044,
-                    'data4': 4386,
-                    'logTime': '2004-09-30T16:00:00.000Z'
-                }, {
-                    'year': 2005,
-                    'data1': 1600,
-                    'data2': 7988,
-                    'data3': 9806,
-                    'data4': 1099,
-                    'logTime': '2005-09-30T16:00:00.000Z'
-                }, {
-                    'year': 2006,
-                    'data1': 6450,
-                    'data2': 1776,
-                    'data3': 2527,
-                    'data4': 9879,
-                    'logTime': '2006-09-30T16:00:00.000Z'
-                }, {
-                    'year': 2007,
-                    'data1': 5071,
-                    'data2': 7303,
-                    'data3': 8338,
-                    'data4': 1245,
-                    'logTime': '2007-09-30T16:00:00.000Z'
+            data: function () {
+                var arr = [];
+                for (var i = 0, l = 500; i < l; i++) {
+                    arr.push({
+                        'id': i,
+                        'year': BT.Util.randomNum(1000, 2000),
+                        'data1': BT.Util.randomNum(1000, 3000),
+                        'data2': BT.Util.randomNum(1000, 8000),
+                        'data3': BT.Util.randomNum(1000, 5000),
+                        'data4': BT.Util.randomNum(1000, 6000),
+                        'logTime': '2000-09-30T16:00:00.000Z'
+                    });
                 }
-            ]
+                return arr;
+            }()
         }).on('collapse expand', function (e) {
             console.info('collapse expand:', e.type);
             return false;
